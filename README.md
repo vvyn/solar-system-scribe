@@ -1,4 +1,6 @@
 # solar-system-scribe
+- just in case y'all haven't used Github
+- DOWNLOAD GITHUB DESKTOP!!!!!!!!!!!! (https://desktop.github.com/)
 
 ## how to get the code
 1) download VS Code if u dont have it yet (https://code.visualstudio.com/)
