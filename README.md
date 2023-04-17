@@ -14,4 +14,5 @@
 ## load the code (frontend for now, need to add nodej)
 go to terminal
 1) cd client
-2) npm start
+2) npm i --force
+3) npm start
