@@ -1,24 +1,95 @@
-import logo from './logo.svg';
 import './App.css';
+import starryBg  from './imgs/starry_bg.png';
+import title  from './imgs/title.png';
+import loginPlanet  from './imgs/planet1.png';
+import registerPlanet  from './imgs/planet2.png';
+
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+
+
+import { useState } from "react";
 
 function App() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar bg="light" expand="lg">
+      <Container>
+        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#link">Link</Nav.Link>
+            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">
+                Another action
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">
+                Separated link
+              </NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+
+
+
+    <div style={{position: 'relative'}}>
+      <img style={{height: '100%', width: '100%'}} src={starryBg} alt="starry background"/>
+      <div style={{position: 'absolute', top: '10%', left: '30%', right: '0', bottom: 0, justifyContent: 'center', alignItems: 'center'}}>
+        <h1 style={{color: 'white'}}>Solar System Scribe</h1>
+
+      <div>
+          <form onSubmit={'#'}>
+            <div>
+              <label>
+                <input type="text" placeholder="email" onChange={(e) => setEmail(e.target.value)}/>
+              </label>
+            </div>
+            <div>
+              <label>
+                <input type="password" placeholder="password" onChange={(e) => setPassword(e.target.value)} />
+              </label>
+            </div>
+            <button type="submit">
+              Submit
+            </button>
+          </form>
+          <a className="App-link" href="/signup">
+            <p style={{ fontSize: "12px" }}>create account</p>
+          </a>
+        </div>
+
+        <div>
+        <img src={title}/>
+        <div>
+          <img src={loginPlanet}/>
+          <img src={registerPlanet}/>
+        </div>
+
+      </div>
+
+        </div>
+
+
     </div>
+
+
+
+
+
+    </div>
+
   );
 }
 
