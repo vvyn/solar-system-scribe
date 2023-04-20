@@ -1,7 +1,8 @@
-import './App.css';
-import starryBg  from './imgs/starry_bg.png';
-import title  from './imgs/title.png';
+import './../App.css';
+import starryBg  from './../imgs/starry_bg.png';
+import title  from './../imgs/title.png';
 import { useState } from "react";
+import Navbar from './NavBar';
 
 function App() {
   const [email, setEmail] = useState("");
@@ -9,6 +10,7 @@ function App() {
 
   return (
     <div style={{position: 'relative'}}>
+    <Navbar/>
       <img style={{height: '100%', width: '100%'}} src={starryBg} alt="starry background"/>
       <div style={{position: 'absolute', top: '10%', left: '30%', right: '0', bottom: 0, justifyContent: 'center', alignItems: 'center'}}>
         <h1 style={{color: 'white'}}>Solar System Scribe</h1>

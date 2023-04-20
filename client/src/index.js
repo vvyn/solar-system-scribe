@@ -2,12 +2,87 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import Autehnticaiton from './pages/authenticaiton';
+import Badges from './pages/badges';
+import Game from './pages/game';
+import Leaderboard from './pages/leaderboard';
+import Levels from './pages/levels';
+import Login from './pages/login';
+import Registration from './pages/registerAccount';
+import Rules from './pages/rules';
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route
+          exact
+          path="/login"
+          element={
+            <Login/>
+          }
+        />
+        <Route
+          exact
+          path="/registration"
+          element={
+              <Registration />
+          }
+        />
+         <Route
+          exact
+          path="/authenticaiton"
+          element={
+              <Autehnticaiton />
+          }
+        />
+        <Route
+          exact
+          path="/badges"
+          element={
+              <Badges />
+          }
+        />
+        <Route
+          exact
+          path="/game"
+          element={
+              <Game />
+          }
+        />
+        <Route
+          exact
+          path="/leaderboard"
+          element={
+              <Leaderboard />
+          }
+        />
+        <Route
+          exact
+          path="/levels"
+          element={
+              <Levels />
+          }
+        />
+        <Route
+          exact
+          path="/rules"
+          element={
+              <Rules />
+          }
+        />
+        <Route
+          exact
+          path="/"
+          element={
+            <App />
+          }
+        />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
