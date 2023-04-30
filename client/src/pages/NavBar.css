@@ -1,0 +1,45 @@
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    font-family: "JetBrains Mono";
+    height: 40px;
+  }
+
+  .allBtns {
+    display: flex;
+  }
+
+  .home {
+    border: none;
+    background-color: #ffffff;
+    padding: 4px 8px;
+    font-size: 16px;
+    margin-right: 600px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    margin-left: 5px;
+  }
+
+  .btn {
+    border-radius: 10px;
+    background-color: #ffffff;
+    padding: 4px 8px;
+    font-size: 14px;
+    margin-right: 40px;
+    cursor: pointer;
+    border: none;
+  }
+
+  .account {
+    border-radius: 2px;
+    background-color: #ffffff;
+    padding: 4px 26px;
+    font-size: 14px;
+    margin-right: 40px;
+    cursor: pointer;
+    border: 1px solid black;
+  }

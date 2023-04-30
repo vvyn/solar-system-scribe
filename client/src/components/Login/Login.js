@@ -3,7 +3,7 @@ import starryBg  from '../../imgs/starry_bg.png';
 import title  from '../../imgs/title.png';
 import loginPlanet  from '../../imgs/planet1.png';
 
-import Navbar from '../..//pages/NavBar';
+import Navbar from '../../pages/NavBar';
 
 import { useState } from "react";
 
@@ -13,7 +13,10 @@ import { auth } from '../../firebase/firebaseConfig';
 export default function Login() {
   const handleGoogle = async (event) => {
     const provider = await new GoogleAuthProvider();
-    return signInWithPopup(auth, provider);
+    signInWithPopup(auth, provider)
+    .then(() => {
+      window.location = '/game';
+    });
   }
   return(
     <div>

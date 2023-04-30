@@ -27,7 +27,7 @@ root.render(
         />
         <Route
           exact
-          path="/registration"
+          path="/signup"
           element={
               <Registration />
           }
