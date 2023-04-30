@@ -27,7 +27,7 @@ export default function Login() {
         <div>
         <img src={title}/>
         <div>
-          <input type="image" src={loginPlanet} onClick={handleGoogle}/>
+          <input type="image" style={{marginLeft: '10%'}} src={loginPlanet} onClick={handleGoogle}/>
         </div>
       </div>
         </div>

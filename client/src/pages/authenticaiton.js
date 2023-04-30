@@ -2,7 +2,10 @@ import '../App.css';
 import starryBg  from '../imgs/starry_bg.png';
 import title  from '../imgs/title.png';
 import loginPlanet  from '../imgs/planet1.png';
+import planet2  from '../imgs/planet2.png';
+
 import Navbar from '../pages/NavBar';
+//import deletePlanet  from './planet2.png';
 
 import { useState } from "react";
 
@@ -11,18 +14,27 @@ import { auth } from '../firebase/firebaseConfig';
 
 export default function Login() {
   function DeleteUser() {
-      const user = auth.currentUser;
+
+      if (auth.currentUser) {
+
+        const user = auth.currentUser;
    
-      user.delete()
+        user.delete()
           .then(() => {
               // User deleted.
               console.log("User Account Deleted Successful");
+              alert("User Account Deleted Successful");
           })
           .catch((error) => {
           console.log(error)
               // An error occurred
               // ...
+              alert("No Account to Delete");
           });
+
+      } else {
+          alert("No Account to Delete");
+      }
   }
   const handleGoogle = async (event) => {
     const provider = await new GoogleAuthProvider();
@@ -38,7 +50,9 @@ export default function Login() {
         <div>
         <img src={title}/>
         <div>
-          <button onClick={DeleteUser}>delete account </button>
+          <div onClick={DeleteUser}>
+            <img type="image" style={{marginLeft: '10%'}} src={planet2}/>
+          </div>
         </div>
       </div>
         </div>

@@ -73,7 +73,7 @@ const TypingGame = () => {
       <Navbar/>
       <img style={{height: '100%', width: '100%', position: 'fixed', zIndex: -1}} src={starryBg} alt="starry background"/>
 
-      <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-around', alignItems: 'center', height: '40vh', marginTop: '50px'}}>
+      <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-around', alignItems: 'center', height: '40vh', marginTop: '100px'}}>
         <h1 style={{color: 'white', height:'10vh'}}>Solar System Scribe</h1>
         <h2 style={{color: 'white'}}>Words Typed: {score}</h2>
         <h2 style={{color: 'white'}}>Time: {time}</h2>

@@ -2,7 +2,6 @@ import './App.css';
 import starryBg  from './imgs/starry_bg.png';
 import title  from './imgs/title.png';
 import loginPlanet  from './imgs/planet1.png';
-import registerPlanet  from './imgs/planet2.png';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import Dashboard from './components/Dashboard/Dashboard'
