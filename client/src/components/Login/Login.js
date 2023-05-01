@@ -32,9 +32,7 @@ export default function Login() {
         console.log(passwordDict);
 
       }
-
-      window.location = '/game';
-    });
+        });
   }
 
   function NewPassword() {

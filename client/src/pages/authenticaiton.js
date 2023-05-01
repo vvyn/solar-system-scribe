@@ -60,6 +60,9 @@ export default function Login() {
         console.log(passwordDict);
       } else {
         alert("Password not long enough");
+        var newPassword = prompt("enter new password:");
+        passwordDict[user.email] = newPassword;
+        console.log(passwordDict);
       }
     } else {
       alert("No Account");
