@@ -11,13 +11,51 @@ import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { auth } from '../../firebase/firebaseConfig';
 
 export default function Login() {
+  var passwordDict = {};
+
   const handleGoogle = async (event) => {
     const provider = await new GoogleAuthProvider();
     signInWithPopup(auth, provider)
     .then(() => {
+      const user = auth.currentUser;
+      console.log(passwordDict);
+      var newPassword = prompt("enter new password:");
+
+      if (newPassword.length > 5) {
+        passwordDict[user.email] = newPassword;
+        console.log(passwordDict[user.email]);
+        console.log(passwordDict);
+      } else {
+        alert("Password not long enough");
+        var newPassword = prompt("enter new password:");
+        passwordDict[user.email] = newPassword;
+        console.log(passwordDict);
+
+      }
+
       window.location = '/game';
     });
   }
+
+  function NewPassword() {
+    if (auth.currentUser) {
+      const user = auth.currentUser;
+      console.log(passwordDict);
+
+      var newPassword = prompt("reset password");
+
+      if (newPassword.length > 5) {
+        passwordDict[user.email] = newPassword;
+        console.log(passwordDict[user.email]);
+        console.log(passwordDict);
+      } else {
+        alert("Password not long enough");
+      }
+    } else {
+      alert("No Account");
+    }
+}
+
   return(
     <div>
       <Navbar/>

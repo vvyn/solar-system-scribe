@@ -3,6 +3,7 @@ import starryBg  from '../imgs/starry_bg.png';
 import title  from '../imgs/title.png';
 import loginPlanet  from '../imgs/planet1.png';
 import planet2  from '../imgs/planet2.png';
+import planet3  from '../imgs/planet3.png';
 
 import Navbar from '../pages/NavBar';
 //import deletePlanet  from './planet2.png';
@@ -13,15 +14,23 @@ import { GoogleAuthProvider, signInWithPopup, reauthenticateWithCredential } fro
 import { auth } from '../firebase/firebaseConfig';
 
 export default function Login() {
+  var passwordDict = {};
+
   function DeleteUser() {
 
       if (auth.currentUser) {
 
         const user = auth.currentUser;
-   
-        user.delete()
+
+        console.log(passwordDict);
+
+        var uPassword = prompt("enter password");
+
+        if (uPassword === passwordDict[user.email]) {
+          user.delete()
           .then(() => {
               // User deleted.
+              alert(user.email);
               console.log("User Account Deleted Successful");
               alert("User Account Deleted Successful");
           })
@@ -31,15 +40,32 @@ export default function Login() {
               // ...
               alert("No Account to Delete");
           });
-
+        } else {
+          alert("Error wrong password");
+        }
       } else {
           alert("No Account to Delete");
       }
   }
-  const handleGoogle = async (event) => {
-    const provider = await new GoogleAuthProvider();
-    return signInWithPopup(auth, provider);
-  }
+
+  function ResetPassword() {
+    if (auth.currentUser) {
+      const user = auth.currentUser;
+      console.log(passwordDict);
+
+      var newPassword = prompt("reset password");
+
+      if (newPassword.length > 5) {
+        passwordDict[user.email] = newPassword;
+        console.log(passwordDict);
+      } else {
+        alert("Password not long enough");
+      }
+    } else {
+      alert("No Account");
+    }
+}
+
 
   return(
     <div>
@@ -50,6 +76,9 @@ export default function Login() {
         <div>
         <img src={title}/>
         <div>
+          <div onClick={ResetPassword}>
+            <img type="image" style={{marginLeft: '10%'}} src={planet3}/>
+          </div>
           <div onClick={DeleteUser}>
             <img type="image" style={{marginLeft: '10%'}} src={planet2}/>
           </div>

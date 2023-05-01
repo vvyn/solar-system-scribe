@@ -5,9 +5,7 @@ import { useState } from "react";
 import Navbar from './NavBar';
 
 function App() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
+  
   return (
     <div style={{position: 'relative'}}>
     <Navbar/>
